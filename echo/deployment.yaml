@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo
+spec:
+  selector:
+    matchLabels:
+      app: echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+        - image: hashicorp/http-echo
+          args:
+            - "-text=successful deployment!"
+            - -listen=:8080
+          imagePullPolicy: Always
+          name: echo
+          ports:
+            - containerPort: 8080
