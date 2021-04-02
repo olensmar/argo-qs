@@ -14,7 +14,7 @@ spec:
       containers:
         - image: hashicorp/http-echo
           args:
-            - "-text=successful deployment!"
+            - "-text=Successful Argo deployment!"
             - -listen=:8080
           imagePullPolicy: Always
           name: echo
