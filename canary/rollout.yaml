@@ -14,7 +14,7 @@ spec:
       containers:
         - image: hashicorp/http-echo
           args:
-            - "-text=Canary v9"
+            - "-text=Canary v10"
             - -listen=:8080
           imagePullPolicy: Always
           name: echo-v1
@@ -30,8 +30,8 @@ spec:
             - echo
       steps:
       - setWeight: 30
-      - pause: {duration: 20s}
+      - pause: {duration: 15s}
       - setWeight: 60
-      - pause: {duration: 20s}
+      - pause: {duration: 15s}
       - setWeight: 100
       - pause: {duration: 5}
